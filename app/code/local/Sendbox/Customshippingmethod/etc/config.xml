@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Sendbox_Customshippingmethod>
+      <version>1.0</version>
+    </Sendbox_Customshippingmethod>
+  </modules>
+  <global>
+    <models>
+      <sendbox_customshippingmethod>
+        <class>Sendbox_Customshippingmethod_Model</class>
+      </sendbox_customshippingmethod>
+    </models>
+    <helpers>
+      <sendbox_customshippingmethod>
+        <class>Sendbox_Customshippingmethod_Helper</class>
+      </sendbox_customshippingmethod>
+    </helpers>
+  </global>
+  <default>
+    <carriers>
+      <sendbox_customshippingmethod>
+        <active>1</active>
+        <sallowspecific>1</sallowspecific>
+        <model>sendbox_customshippingmethod/demo</model>
+        <name>Shipping via Sendbox</name>
+        <price>10.00</price>
+        <title>Shipping via Sendbox</title>
+      </sendbox_customshippingmethod>
+    </carriers>
+  </default>
+</config>

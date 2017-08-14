@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+	
+	<global>
+		
+
+		<blocks>
+			<adminhtml>
+				<rewrite>
+					<sales_order_view>Sendbox_Adminhtml_Block_Sales_Order_View</sales_order_view>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+
+		
+	</global>	
+</config>

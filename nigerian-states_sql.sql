@@ -1,0 +1,43 @@
+
+INSERT INTO `directory_country_region` (`country_id`, `code`, `default_name`) VALUES
+('NG', 'ABI', 'Abia'),
+('NG', 'ABV', 'Abuja'),
+('NG', 'ADA', 'Adamawa'),
+('NG', 'AKI', 'Akwa Ibom'),
+('NG', 'ABR', 'Anambra'),
+('NG', 'BCH', 'Bauchi'),
+('NG', 'BAY', 'Bayelsa'),
+('NG', 'BNE', 'Benue'),
+('NG', 'BOR', 'Borno'),
+('NG', 'CRI', 'Cross River'),
+('NG', 'DEL', 'Delta'),
+('NG', 'EBN', 'Ebonyi'),
+('NG', 'EDO', 'Edo'),
+('NG', 'EKI', 'Ekiti'),
+('NG', 'ENU', 'Enugu'),
+('NG', 'GMB', 'Gombe'),
+('NG', 'IMO', 'Imo'),
+('NG', 'JIG', 'Jigawa'),
+('NG', 'KDA', 'Kaduna'),
+('NG', 'KAN', 'Kano'),
+('NG', 'KAT', 'Katsina'),
+('NG', 'KEB', 'Kebbi'),
+('NG', 'KGI', 'Kogi'),
+('NG', 'KWA', 'Kwara'),
+('NG', 'LOS', 'Lagos'),
+('NG', 'NAS', 'Nasarawa'),
+('NG', 'NIG', 'Niger'),
+('NG', 'OGN', 'Ogun'),
+('NG', 'OND', 'Ondo'),
+('NG', 'OSU', 'Osun'),
+('NG', 'OYO', 'Oyo'),
+('NG', 'PLT', 'Plateau'),
+('NG', 'RVS', 'Rivers'),
+('NG', 'SOK', 'Sokoto'),
+('NG', 'TAR', 'Taraba'),
+('NG', 'YBE', 'Yobe'),
+('NG', 'ZFR', 'Zamfara');
+
+INSERT INTO `directory_country_region_name` (`locale` ,`region_id` ,`name` )
+    SELECT 'en_US', tmp.region_id, tmp.default_name FROM `directory_country_region`
+        AS tmp WHERE tmp.country_id='NG';

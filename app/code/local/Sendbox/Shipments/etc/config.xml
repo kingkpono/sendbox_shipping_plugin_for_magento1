@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sendbox_Shipments extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sendbox
+ * @package        Sendbox_Shipments
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Sendbox_Shipments>
+            <version>1.0.0</version>
+        </Sendbox_Shipments>
+    </modules>
+    <global>
+        <resources>
+            <sendbox_shipments_setup>
+                <setup>
+                    <module>Sendbox_Shipments</module>
+                    <class>Sendbox_Shipments_Model_Resource_Setup</class>
+                </setup>
+            </sendbox_shipments_setup>
+        </resources>
+        <blocks>
+            <sendbox_shipments>
+                <class>Sendbox_Shipments_Block</class>
+            </sendbox_shipments>
+        </blocks>
+        <helpers>
+            <sendbox_shipments>
+                <class>Sendbox_Shipments_Helper</class>
+            </sendbox_shipments>
+        </helpers>
+        <models>
+            <sendbox_shipments>
+                <class>Sendbox_Shipments_Model</class>
+                <resourceModel>sendbox_shipments_resource</resourceModel>
+            </sendbox_shipments>
+            <sendbox_shipments_resource>
+                <class>Sendbox_Shipments_Model_Resource</class>
+                <entities>
+                    <shipment>
+                        <table>sendbox_shipments_shipment</table>
+                    </shipment>
+                    <shipment_store>
+                        <table>sendbox_shipments_shipment_store</table>
+                    </shipment_store>
+                    <shipment_comment>
+                        <table>sendbox_shipments_shipment_comment</table>
+                    </shipment_comment>
+                    <shipment_comment_store>
+                        <table>sendbox_shipments_shipment_comment_store</table>
+                    </shipment_comment_store>
+                </entities>
+            </sendbox_shipments_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <sendbox_shipments>
+                        <class>Sendbox_Shipments_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </sendbox_shipments>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <sendbox_shipments>
+                    <file>sendbox_shipments.xml</file>
+                </sendbox_shipments>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Sendbox_Shipments>
+                    <files>
+                        <default>Sendbox_Shipments.csv</default>
+                    </files>
+                </Sendbox_Shipments>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Sendbox_Shipments before="Mage_Adminhtml">Sendbox_Shipments_Adminhtml</Sendbox_Shipments>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <sendbox_shipments>
+                <use>standard</use>
+                <args>
+                    <module>Sendbox_Shipments</module>
+                    <frontName>sendbox_shipments</frontName>
+                </args>
+            </sendbox_shipments>
+        </routers>
+        <layout>
+            <updates>
+                <sendbox_shipments>
+                    <file>sendbox_shipments.xml</file>
+                </sendbox_shipments>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Sendbox_Shipments>
+                    <files>
+                        <default>Sendbox_Shipments.csv</default>
+                    </files>
+                </Sendbox_Shipments>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <sendbox_shipments>
+            <shipment>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <rss>1</rss>
+            </shipment>
+        </sendbox_shipments>
+    </default>
+</config>

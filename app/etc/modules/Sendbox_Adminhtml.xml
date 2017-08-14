@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Sendbox_Adminhtml>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Sendbox_Adminhtml>
+    </modules>
+</config>

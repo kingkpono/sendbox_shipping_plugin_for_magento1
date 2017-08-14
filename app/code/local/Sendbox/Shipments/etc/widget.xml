@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sendbox_Shipments extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sendbox
+ * @package        Sendbox_Shipments
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <shipments_shipment_view type="sendbox_shipments/shipment_widget_view" translate="name description" module="sendbox_shipments">
+        <name>Shipment view</name>
+        <description>Shipment view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <shipment_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Shipment</label>
+                <type>label</type>
+                <helper_block>
+                    <type>sendbox_shipments/adminhtml_shipment_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Shipment</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </shipment_id>
+        </parameters>
+    </shipments_shipment_view>
+    <shipments_shipment_link type="sendbox_shipments/shipment_widget_link" translate="name description" module="sendbox_shipments">
+        <name>Shipment link</name>
+        <description>Shipment link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <shipment_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Shipment</label>
+                <type>label</type>
+                <helper_block>
+                    <type>sendbox_shipments/adminhtml_shipment_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Shipment</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </shipment_id>
+        </parameters>
+    </shipments_shipment_link>
+</widgets>

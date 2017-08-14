@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sendbox_Shipments extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sendbox
+ * @package        Sendbox_Shipments
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <api2>
+        <resource_groups>
+            <sendbox_shipments translate="title" module="sendbox_shipments">
+                <title>Shipments</title>
+                <sort_order>120</sort_order>
+                <children>
+                    <sendbox_shipments_shipment translate="title" module="sendbox_shipments">
+                        <title>Shipment</title>
+                        <sort_order>0</sort_order>
+                    </sendbox_shipments_shipment>
+
+                </children>
+            </sendbox_shipments>
+        </resource_groups>
+        <resources>
+            <sendbox_shipments_shipment translate="title" module="sendbox_shipments">
+                <group>sendbox_shipments_shipment</group>
+                <model>sendbox_shipments/api2_shipment</model>
+                <working_model>sendbox_shipments/shipment</working_model>
+                <title>Shipment</title>
+                <sort_order>0</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <retrieve>1</retrieve>
+                    </customer>
+                    <guest>
+                        <retrieve>1</retrieve>
+                    </guest>
+                </privileges>
+                <attributes translate="entity_id origin_name origin_address origin_phone origin_city origin_state origin_country origin_street destination_address destination_phone destination_street destination_state delivery_priority_code incoming_option_code pickup_date delivery_type_code accept_value_on_delivery amount_to_receive fee_payment_channel_code channel_code status url_key in_rss allow_comment" module="sendbox_shipments">
+                    <entity_id>Id</entity_id>
+                    <origin_name>Origin Name</origin_name>
+                    <origin_address>Origin Address</origin_address>
+                    <origin_phone>Origin Phone</origin_phone>
+                    <origin_city>Origin City</origin_city>
+                    <origin_state>Origin State</origin_state>
+                    <origin_country>Origin Country</origin_country>
+                    <origin_street>Origin Street</origin_street>
+                    <destination_address>Destination Address</destination_address>
+                    <destination_phone>Destination Phone</destination_phone>
+                    <destination_street>Destination Street</destination_street>
+                    <destination_state>Destination State</destination_state>
+                    <delivery_priority_code>Delivery Priority Code</delivery_priority_code>
+                    <incoming_option_code>Pickup</incoming_option_code>
+                    <pickup_date>Pickup Date</pickup_date>
+                    <delivery_type_code>Delivery Type Code</delivery_type_code>
+                    <accept_value_on_delivery>Accept Value On Delivery</accept_value_on_delivery>
+                    <amount_to_receive>Amount to Receive</amount_to_receive>
+                    <fee_payment_channel_code>Fee Payment Channel Code</fee_payment_channel_code>
+                    <channel_code>Channel Code</channel_code>
+                    <status>Enabled</status>
+                    <url_key>URL key</url_key>
+                    <in_rss>In RSS</in_rss>
+                    <allow_comment>Allow Comment</allow_comment>
+                </attributes>
+                <routes>
+                    <route_entity>
+                        <route>/shipments_shipments/:id</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_entity_with_store>
+                        <route>/shipments_shipments/:id/store/:store</route>
+                        <action_type>entity</action_type>
+                    </route_entity_with_store>
+                    <route_collection>
+                        <route>/shipments_shipments</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                    <route_collection_with_store>
+                        <route>/shipments_shipments/store/:store</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_store>
+                </routes>
+                <versions>1</versions>
+            </sendbox_shipments_shipment>
+
+        </resources>
+    </api2>
+</config>
